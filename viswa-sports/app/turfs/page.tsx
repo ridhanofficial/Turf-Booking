@@ -49,7 +49,7 @@ function TurfsContent() {
     return (
         <>
             {/* Facility Type Filter */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 40, alignItems: 'center' }}>
+            <div className="filter-row" style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 40, alignItems: 'center' }}>
                 <span style={{ color: '#8B9CB0', fontSize: 13, marginRight: 4 }}>Facility:</span>
                 {FACILITY_TYPES.map((fac) => (
                     <button

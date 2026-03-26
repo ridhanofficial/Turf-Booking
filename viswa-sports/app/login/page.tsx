@@ -130,18 +130,7 @@ export default function LoginPage() {
                     </div>
 
                     {/* Google Sign-In Button */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            opacity: loading ? 0.6 : 1,
-                            pointerEvents: loading ? 'none' : 'auto',
-                            transition: 'opacity 0.2s',
-                        }}
-                    >
+                    <div className="google-btn-container">
                         <GoogleLogin
                             onSuccess={handleGoogleSuccess}
                             onError={handleGoogleError}
@@ -150,9 +139,8 @@ export default function LoginPage() {
                             shape="pill"
                             text="signin_with"
                             logo_alignment="left"
-                            width="340"
                         />
-                    </motion.div>
+                    </div>
 
                     {/* Loading overlay text */}
                     {loading && (

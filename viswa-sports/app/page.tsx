@@ -40,7 +40,7 @@ export default function HomePage() {
     <div style={{ minHeight: '100vh', background: '#000000', color: '#F0F4F8' }}>
 
       {/* ── HERO ── */}
-      <section style={{
+      <section className="hero-section" style={{
         minHeight: '100vh',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         position: 'relative', overflow: 'hidden',
@@ -94,6 +94,7 @@ export default function HomePage() {
           {/* Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }}
+            className="hero-buttons"
             style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}
           >
             <Link href="/turfs" style={{
@@ -121,7 +122,7 @@ export default function HomePage() {
 
 
       {/* ── TURF TYPES ── */}
-      <section style={{ padding: '100px 24px', maxWidth: 1100, margin: '0 auto' }}>
+      <section className="section-pad" style={{ maxWidth: 1100, margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -216,7 +217,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section style={{ padding: '100px 24px', position: 'relative', overflow: 'hidden' }}>
+      <section className="section-pad" style={{ position: 'relative', overflow: 'hidden' }}>
         {/* Subtle ambient glow */}
         <div style={{
           position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)',
@@ -281,18 +282,19 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ padding: '100px 24px' }}>
+      <section className="section-pad">
         <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }} whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
+            className="cta-card"
             style={{
               position: 'relative',
               background: 'rgba(255,255,255,0.03)',
               backdropFilter: 'blur(20px) saturate(180%)',
               WebkitBackdropFilter: 'blur(20px) saturate(180%)',
               border: '1px solid rgba(255,255,255,0.07)',
-              borderRadius: 24, padding: '80px 40px',
+              borderRadius: 24,
               boxShadow: '0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 60px rgba(0,229,153,0.05)',
               overflow: 'hidden',
             }}
@@ -320,7 +322,7 @@ export default function HomePage() {
               <p style={{ color: '#8B9CB0', fontSize: 17, marginBottom: 36 }}>
                 Book your slot now and experience sports like never before.
               </p>
-              <Link href="/turfs" style={{
+              <Link href="/turfs" className="cta-btn" style={{
                 background: '#00e599',
                 color: '#000000', fontWeight: 800, padding: '18px 48px',
                 borderRadius: 14, textDecoration: 'none', fontSize: 17,
