@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Viswa Sports Arena",
-    description: "Book Your Game Like a Movie 🎬",
+    description: "Book Your Game. Own the Moment.",
     type: "website",
     url: "https://viswasports.com",
     siteName: "Viswa Sports Arena",
