@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   title: "Viswa Sports — Book Your Game Like a Movie",
   description: "Premium turf booking platform. Book cricket, football, badminton and more at Viswa Sports.",
   keywords: "turf booking, cricket, football, sports, Viswa Sports",
+  icons: {
+    icon: "/LOGO_1.jpeg",
+    apple: "/LOGO_1.jpeg",
+  },
   openGraph: {
     title: "Viswa Sports",
     description: "Book Your Game Like a Movie",
