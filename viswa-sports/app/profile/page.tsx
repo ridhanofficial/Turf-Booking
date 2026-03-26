@@ -1,11 +1,11 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter, useSearchParams } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { getMyProfile, updateMyProfile } from '@/lib/api';
 
-export default function ProfilePage() {
+function ProfileInner() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const isSetup = searchParams.get('setup') === '1'; // first-time setup flow
@@ -306,5 +306,19 @@ export default function ProfilePage() {
                 </motion.div>
             </div>
         </div>
+    );
+}
+
+export default function ProfilePage() {
+    return (
+        <Suspense fallback={
+            <div style={{ minHeight: '100vh', background: '#000000', paddingTop: 120 }}>
+                <div style={{ maxWidth: 600, margin: '0 auto', padding: '0 24px' }}>
+                    <div style={{ height: 300, borderRadius: 20, background: 'rgba(255,255,255,0.04)' }} />
+                </div>
+            </div>
+        }>
+            <ProfileInner />
+        </Suspense>
     );
 }
