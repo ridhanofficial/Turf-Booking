@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     apple: "/LOGO_1.jpeg",
   },
   openGraph: {
-    title: "🏏 Viswa Sports Arena",
-    description: "Lights. Pitch. Action. 🎬\nThe field is calling — your slot is waiting.\nBook your game like a blockbuster at viswasports.com",
+    title: "Viswa Sports Arena",
+    description: "Book Your Game Like a Movie 🎬",
     type: "website",
     url: "https://viswasports.com",
     siteName: "Viswa Sports Arena",
