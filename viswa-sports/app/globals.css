@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --accent: #00e599;
+  --accent-dim: rgba(0, 229, 153, 0.12);
+  --accent-red: #FF4444;
+  --accent-yellow: #FFD700;
+  --text-primary: #F0F4F8;
+  --text-secondary: #8B9CB0;
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --glass-blur: blur(16px) saturate(180%);
+  --glow-green: rgba(0, 229, 153, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  /* Subtle grid texture */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ── Glassmorphism Cards ─────────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(0, 229, 153, 0.2);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    0 8px 40px rgba(0, 0, 0, 0.5),
+    0 0 24px rgba(0, 229, 153, 0.06);
+}
+
+/* ── Primary button ──────────────────────────────────────────── */
+.btn-neon {
+  background: #00e599;
+  color: #000000;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 20px rgba(0, 229, 153, 0.25);
+}
+
+.btn-neon:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 0 32px rgba(0, 229, 153, 0.4);
+}
+
+.btn-neon:active {
+  transform: translateY(0);
+}
+
+/* ── Accent text ─────────────────────────────────────────────── */
+.accent-text {
+  color: #00e599;
+}
+
+/* ── Slot status colors ──────────────────────────────────────── */
+.slot-available {
+  background: rgba(0, 229, 153, 0.08);
+  border: 1px solid rgba(0, 229, 153, 0.25);
+  color: #00e599;
+  backdrop-filter: blur(8px);
+}
+
+.slot-booked {
+  background: rgba(255, 68, 68, 0.08);
+  border: 1px solid rgba(255, 68, 68, 0.25);
+  color: #FF4444;
+  cursor: not-allowed;
+}
+
+.slot-held {
+  background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  color: #FFD700;
+  cursor: not-allowed;
+}
+
+.slot-disabled {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #4A5568;
+  cursor: not-allowed;
+}
+
+.slot-selected {
+  background: rgba(0, 229, 153, 0.14);
+  border: 2px solid rgba(0, 229, 153, 0.6);
+  color: #00e599;
+  box-shadow: 0 0 12px rgba(0, 229, 153, 0.2);
+}
+
+/* ── Ambient glow orbs (place in page bg) ────────────────────── */
+.glow-orb {
+  pointer-events: none;
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 153, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 153, 0.4);
+}
+
+/* ── Shimmer ─────────────────────────────────────────────────── */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0.02) 25%,
+      rgba(255, 255, 255, 0.06) 50%,
+      rgba(255, 255, 255, 0.02) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+  border-radius: 12px;
+}
+
+/* ── Float ───────────────────────────────────────────────────── */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ── RetroGrid (Linkify) ─────────────────────────────────────── */
+@keyframes grid-scroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(60px);
+  }
+}
+
+.retro-grid-lines {
+  background-repeat: repeat;
+  background-size: 60px 60px;
+  height: 300vh;
+  width: 600vw;
+  margin-left: -50%;
+  transform-origin: 100% 0 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 0),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+  animation: grid-scroll 4s linear infinite;
+}
+
+/* ── BorderBeam (Linkify) ────────────────────────────────────── */
+@keyframes border-beam {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.border-beam-element {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: calc(var(--border-width, 1.5) * 1px) solid transparent;
+  -webkit-mask:
+    linear-gradient(transparent, transparent),
+    linear-gradient(white, white);
+  -webkit-mask-clip: padding-box, border-box;
+  -webkit-mask-composite: destination-in;
+  mask:
+    linear-gradient(transparent, transparent),
+    linear-gradient(white, white);
+  mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+}
+
+.border-beam-element::after {
+  content: '';
+  position: absolute;
+  aspect-ratio: 1;
+  width: calc(var(--size, 200) * 1px);
+  animation: border-beam calc(var(--duration, 6) * 1s) infinite linear;
+  background: linear-gradient(to left, var(--color-from, #00e599), var(--color-to, transparent), transparent);
+  offset-anchor: calc(var(--anchor, 90) * 1%) 50%;
+  offset-path: rect(0 auto auto 0 round calc(var(--size, 200) * 1px));
+}
+
+/* ── Marquee (stats row) ─────────────────────────────────────── */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  gap: 0;
+  animation: marquee 28s linear infinite;
+  width: max-content;
+}
+
+/* ── Magic Badge (Linkify exact technique) ────────────────────── */
+@keyframes badge-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.magic-badge {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 9999px;
+  padding: 2px;
+  /* border thickness */
+  cursor: default;
+  user-select: none;
+}
+
+.magic-badge-beam {
+  position: absolute;
+  inset: -1000%;
+  animation: badge-spin 3s linear infinite;
+  background: conic-gradient(from 90deg at 50% 50%,
+      #000000 0%,
+      #000000 40%,
+      #005c3d 55%,
+      #00e599 65%,
+      #afffdf 70%,
+      #00e599 75%,
+      #005c3d 82%,
+      #000000 95%,
+      #000000 100%);
+}
+
+.magic-badge-inner {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: #080808;
+  padding: 7px 18px;
+  z-index: 1;
+  white-space: nowrap;
+  gap: 6px;
+}
+
+/* ── Responsive Admin grid ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .admin-hamburger {
+    display: flex !important;
+  }
+
+  .admin-overlay {
+    display: block !important;
+  }
+}

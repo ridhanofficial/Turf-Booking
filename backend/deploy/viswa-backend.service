@@ -1,0 +1,37 @@
+[Unit]
+Description=Viswa Sports Backend (Docker)
+Documentation=https://github.com/sampath-raj/Turf-project
+After=docker.service network-online.target
+Requires=docker.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+
+# Pull latest image and run container
+# Environment file holds all secrets — never hardcode here
+ExecStartPre=-/usr/bin/docker stop viswa-backend
+ExecStartPre=-/usr/bin/docker rm viswa-backend
+
+ExecStart=/usr/bin/docker run \
+    --name viswa-backend \
+    --rm \
+    --env-file /etc/viswa-backend.env \
+    -p 127.0.0.1:8000:8000 \
+    -v /opt/viswa-backend/uploads:/app/uploads \
+    viswa-backend:latest
+
+ExecStop=/usr/bin/docker stop viswa-backend
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=viswa-backend
+
+# Resource limits for t3.micro
+MemoryMax=800M
+CPUQuota=180%
+
+[Install]
+WantedBy=multi-user.target

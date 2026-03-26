@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment / Secrets — NEVER bake into image
+.env
+.env.*
+!.env.example
+
+# Tests
+tests/
+
+# Uploads / media (mounted as volume in production)
+uploads/
+
+# Dev / migration scripts
+apply_*.py
+check_cols.py
+diag.py
+run_migration.py
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Docker itself
+Dockerfile*
+.dockerignore
+docker-compose*.yml

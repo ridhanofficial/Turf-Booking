@@ -1,0 +1,38 @@
+# ════════════════════════════════════════════════════════
+# Root .gitignore — Viswa Sports Turf
+# ════════════════════════════════════════════════════════
+
+# Environment variables — NEVER commit
+.env
+.env.local
+.env.production
+.env.prod
+
+# Databases left over from development
+*.db
+*.sqlite3
+
+# Redis RDB dump files
+dump.rdb
+
+# CI/CD output logs
+railway_login_output.txt
+
+# Debug / error artifacts
+startup_error.txt
+alembic_error.txt
+
+# Node.js build artifacts
+node_modules/
+.next/
+out/
+
+# Python virtual environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# OS generated
+.DS_Store
+Thumbs.db
