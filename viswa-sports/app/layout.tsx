@@ -5,17 +5,27 @@ import Navbar from "@/components/Navbar";
 import AdPopupWrapper from "@/components/AdPopupWrapper";
 
 export const metadata: Metadata = {
-  title: "Viswa Sports — Book Your Game Like a Movie",
-  description: "Premium turf booking platform. Book cricket, football, badminton and more at Viswa Sports.",
-  keywords: "turf booking, cricket, football, sports, Viswa Sports",
+  title: "Viswa Sports Arena — Book Your Game Like a Movie",
+  description: "Lights. Pitch. Action. The field is calling — book your turf at Viswa Sports Arena.",
+  keywords: "turf booking, cricket, football, sports, Viswa Sports Arena",
   icons: {
     icon: "/LOGO_1.jpeg",
     apple: "/LOGO_1.jpeg",
   },
   openGraph: {
-    title: "Viswa Sports",
-    description: "Book Your Game Like a Movie",
+    title: "🏏 Viswa Sports Arena",
+    description: "Lights. Pitch. Action. 🎬\nThe field is calling — your slot is waiting.\nBook your game like a blockbuster at viswasports.com",
     type: "website",
+    url: "https://viswasports.com",
+    siteName: "Viswa Sports Arena",
+    images: [
+      {
+        url: "https://viswasports.com/LOGO_1.jpeg",
+        width: 800,
+        height: 800,
+        alt: "Viswa Sports Arena",
+      },
+    ],
   },
 };
 
