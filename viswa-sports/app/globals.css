@@ -355,10 +355,16 @@ body {
   .hero-buttons {
     flex-direction: column !important;
     align-items: stretch !important;
+    gap: 12px !important;
   }
   .hero-buttons a {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     text-align: center !important;
-    padding: 14px 24px !important;
+    padding: 16px 24px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
 
@@ -489,5 +495,26 @@ body {
     display: block !important;
     text-align: center !important;
     padding: 16px 24px !important;
+  }
+}
+
+/* ── Admin Dashboard stat cards ─────────────────────────────── */
+@media (max-width: 640px) {
+  .admin-stat-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+}
+@media (max-width: 360px) {
+  .admin-stat-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Admin login card responsive ────────────────────────────── */
+@media (max-width: 480px) {
+  .admin-login-card {
+    padding: 28px 20px !important;
+    border-radius: 20px !important;
   }
 }

@@ -15,7 +15,8 @@ export default function AdminLogin({ email, setEmail, password, setPassword, log
     return (
         <div style={{ minHeight: 'calc(100vh - 60px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
-                style={{ ...cardStyle, padding: '48px 40px', width: '100%', maxWidth: 420, border: '1px solid rgba(0,229,153,0.15)' }}>
+                className="admin-login-card"
+                style={{ ...cardStyle, padding: 'clamp(28px,8vw,48px) clamp(20px,6vw,40px)', width: '100%', maxWidth: 420, border: '1px solid rgba(0,229,153,0.15)' }}>
                 <div style={{ textAlign: 'center', marginBottom: 32 }}>
                     <div style={{ width: 56, height: 56, borderRadius: 14, background: '#00e599', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', fontSize: 24 }}>⚡</div>
                     <h1 style={{ fontSize: 26, fontWeight: 800, fontFamily: 'Outfit, sans-serif', color: C.white, marginBottom: 6 }}>Admin Sign In</h1>

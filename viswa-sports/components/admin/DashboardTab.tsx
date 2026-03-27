@@ -17,7 +17,7 @@ export default function DashboardTab({ analytics, turfs }: DashboardTabProps) {
 
     return (
         <motion.div key="dash" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: 16, marginBottom: 28 }}>
+            <div className="admin-stat-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: 16, marginBottom: 28 }}>
                 {statCards.map(s => (
                     <div key={s.label} style={{ ...cardStyle, padding: '22px 20px', borderTop: `2px solid ${s.color}33` }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 14 }}>
