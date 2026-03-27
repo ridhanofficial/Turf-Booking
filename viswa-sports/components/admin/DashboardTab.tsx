@@ -38,7 +38,7 @@ export default function DashboardTab({ analytics, turfs }: DashboardTabProps) {
                         { href: '/admin?tab=bookings', label: '📋 Bookings', bg: 'rgba(139,92,246,0.08)', border: 'rgba(139,92,246,0.2)', color: '#a78bfa' },
                         { href: '/admin?tab=discounts', label: '🏷️ Discounts', bg: 'rgba(255,215,0,0.08)', border: 'rgba(255,215,0,0.2)', color: C.yellow },
                         { href: '/admin?tab=ads', label: '📢 Advertisements', bg: 'rgba(255,99,71,0.08)', border: 'rgba(255,99,71,0.2)', color: '#ff6347' },
-                        { href: 'http://localhost:8000/docs', label: '📖 API Docs ↗', bg: C.card, border: C.border, color: C.muted, external: true },
+                        { href: 'https://api.viswasports.com/docs', label: '📖 API Docs ↗', bg: C.card, border: C.border, color: C.muted, external: true },
                     ].map(a => (
                         <a key={a.label} href={a.href} target={(a as any).external ? '_blank' : undefined} rel="noreferrer"
                             style={{ textDecoration: 'none', padding: '10px 18px', borderRadius: 10, background: a.bg, border: `1px solid ${a.border}`, color: a.color, fontSize: 14, fontWeight: 600, fontFamily: 'Inter, sans-serif' }}>

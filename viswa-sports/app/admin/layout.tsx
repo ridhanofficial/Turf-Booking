@@ -219,7 +219,7 @@ function AdminLayoutInner({ children }: { children: React.ReactNode }) {
                                     System
                                 </p>
                                 <a
-                                    href="http://localhost:8000/docs"
+                                    href="https://api.viswasports.com/docs"
                                     target="_blank"
                                     rel="noreferrer"
                                     style={{
