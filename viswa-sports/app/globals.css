@@ -349,7 +349,8 @@ body {
 /* ── Homepage Hero ───────────────────────────────────────────── */
 @media (max-width: 640px) {
   .hero-section {
-    padding: 100px 16px 56px !important;
+    min-height: auto !important;
+    padding: 96px 16px 48px !important;
   }
   .hero-buttons {
     flex-direction: column !important;

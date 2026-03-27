@@ -96,7 +96,7 @@ export default function LoginPage() {
                         WebkitBackdropFilter: 'blur(20px) saturate(180%)',
                         border: '1px solid rgba(255,255,255,0.08)',
                         borderRadius: 24,
-                        padding: '48px 40px 44px',
+                        padding: 'clamp(28px, 8vw, 48px) clamp(20px, 6vw, 40px) clamp(28px, 8vw, 44px)',
                         boxShadow: '0 0 0 1px rgba(255,255,255,0.04) inset, 0 32px 64px rgba(0,0,0,0.5)',
                     }}>
 
