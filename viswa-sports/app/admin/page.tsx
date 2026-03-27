@@ -292,7 +292,7 @@ function AdminPageContent() {
     return (
         <div style={{ padding: 'clamp(16px,4vw,32px) clamp(14px,4vw,24px) 80px', maxWidth: 1100, margin: '0 auto' }}>
             {/* Page header */}
-            <div style={{ marginBottom: 20 }>
+            <div style={{ marginBottom: 20 }}>
                 <h1 style={{ fontSize: 'clamp(20px,5vw,28px)', fontWeight: 800, fontFamily: 'Outfit, sans-serif', marginBottom: 4 }}>
                     {activeTab === 'Dashboard' ? '📊 Dashboard'
                         : activeTab === 'Turfs' ? '🏟️ Turfs'
