@@ -84,7 +84,7 @@ function TurfsContent() {
                     <p style={{ color: '#8B9CB0' }}>Try a different sport filter</p>
                 </div>
             ) : (
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 24 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
                     {turfs.map((turf, i) => (
                         <motion.div
                             key={turf.id}

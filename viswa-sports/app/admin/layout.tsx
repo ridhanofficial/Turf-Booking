@@ -85,18 +85,21 @@ function AdminLayoutInner({ children }: { children: React.ReactNode }) {
                         </span>
                     </Link>
 
-                    {/* Divider */}
-                    <div style={{ width: 1, height: 20, background: C.border, marginLeft: 4 }} />
-                    <span style={{ fontSize: 12, color: C.muted, fontFamily: 'Inter, sans-serif' }}>
-                        Management Portal
-                    </span>
+                    {/* Divider + portal label — hidden on mobile */}
+                    <div className="admin-portal-label" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                        <div style={{ width: 1, height: 20, background: C.border }} />
+                        <span style={{ fontSize: 12, color: C.muted, fontFamily: 'Inter, sans-serif', whiteSpace: 'nowrap' }}>
+                            Management Portal
+                        </span>
+                    </div>
                 </div>
 
                 {/* Right: customer portal link + logout */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                     <Link
                         href="/"
                         target="_blank"
+                        className="admin-customer-link"
                         style={{
                             textDecoration: 'none', fontSize: 13, color: C.muted,
                             padding: '6px 14px', borderRadius: 8,
@@ -104,6 +107,7 @@ function AdminLayoutInner({ children }: { children: React.ReactNode }) {
                             display: 'flex', alignItems: 'center', gap: 6,
                             transition: 'all 0.2s',
                             fontFamily: 'Inter, sans-serif',
+                            whiteSpace: 'nowrap',
                         }}
                     >
                         🔗 Customer Site
@@ -147,6 +151,7 @@ function AdminLayoutInner({ children }: { children: React.ReactNode }) {
 
                         <motion.aside
                             initial={false}
+                            className={sidebarOpen ? 'open' : ''}
                             style={{
                                 position: 'fixed', top: 60, left: 0, bottom: 0,
                                 width: 220, zIndex: 95,
@@ -266,6 +271,9 @@ function AdminLayoutInner({ children }: { children: React.ReactNode }) {
                     aside.open { transform: translateX(0) !important; }
                     .admin-overlay { display: block !important; }
                     main { margin-left: 0 !important; }
+                    .admin-portal-label { display: none !important; }
+                    .admin-customer-link { display: none !important; }
+                    header { padding: 0 12px !important; }
                 }
             `}</style>
         </div>

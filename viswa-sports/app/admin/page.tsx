@@ -290,9 +290,9 @@ function AdminPageContent() {
 
     /* ── MAIN ─────────────────────────────────────────────────────────── */
     return (
-        <div style={{ paddingBottom: 'calc(64px + env(safe-area-inset-bottom))', maxWidth: 1100, margin: '0 auto' }}>
+        <div style={{ padding: 'clamp(16px,4vw,32px) clamp(14px,4vw,24px) 80px', maxWidth: 1100, margin: '0 auto' }}>
             {/* Page header */}
-            <div style={{ padding: 'clamp(16px,4vw,32px) clamp(16px,4vw,24px) 20px', marginBottom: 8 }}>
+            <div style={{ marginBottom: 20 }>
                 <h1 style={{ fontSize: 'clamp(20px,5vw,28px)', fontWeight: 800, fontFamily: 'Outfit, sans-serif', marginBottom: 4 }}>
                     {activeTab === 'Dashboard' ? '📊 Dashboard'
                         : activeTab === 'Turfs' ? '🏟️ Turfs'
@@ -311,7 +311,6 @@ function AdminPageContent() {
                 </p>
             </div>
 
-            <div style={{ padding: '0 clamp(16px,4vw,24px) clamp(24px,6vw,80px)' }}>
             <AnimatePresence mode="wait">
                 {activeTab === 'Dashboard' && <DashboardTab analytics={analytics} turfs={turfs} />}
                 {activeTab === 'Turfs' && (
@@ -333,45 +332,6 @@ function AdminPageContent() {
                         onToggleDiscount={handleToggleDiscount} onDeleteDiscount={handleDeleteDiscount} />
                 )}
             </AnimatePresence>
-            </div>
-
-            {/* ── Mobile sticky bottom tab bar ─────────────────────── */}
-            <style>{`
-              @media (max-width: 767px) {
-                .admin-bottom-nav { display: flex !important; }
-              }
-            `}</style>
-            <nav className="admin-bottom-nav" style={{
-                display: 'none',
-                position: 'fixed', bottom: 0, left: 0, right: 0,
-                background: 'rgba(8,12,16,0.96)',
-                backdropFilter: 'blur(20px) saturate(180%)',
-                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-                borderTop: '1px solid rgba(255,255,255,0.08)',
-                zIndex: 1000,
-                paddingBottom: 'env(safe-area-inset-bottom)',
-            }}>
-                {[
-                    { href: '/admin', label: '📊', text: 'Home', isActive: activeTab === 'Dashboard' },
-                    { href: '/admin?tab=turfs', label: '🏟️', text: 'Turfs', isActive: activeTab === 'Turfs' },
-                    { href: '/admin?tab=slots', label: '📅', text: 'Slots', isActive: activeTab === 'Slots' },
-                    { href: '/admin?tab=bookings', label: '📋', text: 'Bookings', isActive: activeTab === 'Bookings' },
-                    { href: '/admin?tab=discounts', label: '🏷️', text: 'More', isActive: activeTab === 'Discounts' || activeTab === 'Ads' },
-                ].map(tab => (
-                    <a key={tab.href} href={tab.href} style={{
-                        flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center',
-                        justifyContent: 'center', gap: 2, padding: '8px 4px 10px',
-                        textDecoration: 'none',
-                        color: tab.isActive ? '#00e599' : '#5A6A7A',
-                        fontSize: 10, fontWeight: 600, fontFamily: 'Inter, sans-serif',
-                        transition: 'color 0.2s',
-                        borderTop: tab.isActive ? '2px solid #00e599' : '2px solid transparent',
-                    }}>
-                        <span style={{ fontSize: 20 }}>{tab.label}</span>
-                        {tab.text}
-                    </a>
-                ))}
-            </nav>
 
             <TurfDrawer open={showTurfModal} onClose={() => setShowTurfModal(false)}
                 editingTurf={editingTurf} turfForm={turfForm} setTurfForm={setTurfForm}
