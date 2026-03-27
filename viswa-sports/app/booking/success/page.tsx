@@ -23,7 +23,7 @@ function SuccessContent() {
     }, [bookingId, router]);
 
     return (
-        <div style={{ minHeight: '100vh', background: '#000000', color: '#F0F4F8', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 24px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ minHeight: '100vh', background: '#000000', color: '#F0F4F8', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '80px 16px 40px', position: 'relative', overflow: 'hidden' }}>
             {/* Ambient glow */}
             <div style={{ position: 'absolute', top: '20%', left: '50%', transform: 'translateX(-50%)', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,229,153,0.12) 0%, transparent 70%)', pointerEvents: 'none' }} />
             <motion.div
@@ -37,7 +37,7 @@ function SuccessContent() {
                     backdropFilter: 'blur(20px) saturate(180%)',
                     WebkitBackdropFilter: 'blur(20px) saturate(180%)',
                     border: '1px solid rgba(0,229,153,0.15)',
-                    borderRadius: 28, padding: '56px 40px',
+                    borderRadius: 28, padding: 'clamp(28px, 8vw, 56px) clamp(18px, 6vw, 40px)',
                     boxShadow: '0 0 0 1px rgba(255,255,255,0.04) inset, 0 32px 80px rgba(0,0,0,0.6), 0 0 60px rgba(0,229,153,0.06)',
                 }}>
                     <motion.div
@@ -87,11 +87,12 @@ function SuccessContent() {
                         </motion.div>
                     )}
 
-                    <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: '100%' }}>
                         <Link href="/bookings" style={{
                             background: '#00e599',
                             color: '#0a0a0a', fontWeight: 800, padding: '14px 28px',
                             borderRadius: 12, textDecoration: 'none', fontSize: 15,
+                            textAlign: 'center', display: 'block',
                         }}>
                             View My Bookings
                         </Link>
@@ -100,6 +101,7 @@ function SuccessContent() {
                             border: '1px solid rgba(255,255,255,0.1)',
                             color: '#F0F4F8', fontWeight: 600, padding: '14px 28px',
                             borderRadius: 12, textDecoration: 'none', fontSize: 15,
+                            textAlign: 'center', display: 'block',
                         }}>
                             Book Another
                         </Link>
