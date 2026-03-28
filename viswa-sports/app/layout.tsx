@@ -3,6 +3,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Navbar from "@/components/Navbar";
 import AdPopupWrapper from "@/components/AdPopupWrapper";
+import Footer from "@/components/Footer";
 import Script from "next/script";
 
 export const metadata: Metadata = {
@@ -95,6 +96,7 @@ const jsonLd = {
     "Premium cricket and football turf facility in Kinathukadavu, Tamil Nadu. Book online for floodlit pitches, net cricket, and football.",
   url: "https://viswasports.com",
   telephone: "+91-9629621147",
+  email: "viswasportsarena@gmail.com",
   image: "https://viswasports.com/LOGO_1.jpeg",
   address: {
     "@type": "PostalAddress",
@@ -172,6 +174,7 @@ export default function RootLayout({
           }}
         />
         <AdPopupWrapper />
+        <Footer />
       </body>
     </html>
   );
