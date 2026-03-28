@@ -94,6 +94,7 @@ const jsonLd = {
   description:
     "Premium cricket and football turf facility in Kinathukadavu, Tamil Nadu. Book online for floodlit pitches, net cricket, and football.",
   url: "https://viswasports.com",
+  telephone: "+91-9629621147",
   image: "https://viswasports.com/LOGO_1.jpeg",
   address: {
     "@type": "PostalAddress",
