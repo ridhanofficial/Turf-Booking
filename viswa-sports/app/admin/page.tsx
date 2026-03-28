@@ -83,7 +83,9 @@ function AdminPageContent() {
         try {
             const res = await adminLogin(email, password);
             localStorage.setItem('viswa_admin_token', res.data.access_token);
-            setIsLoggedIn(true); toast.success('Welcome, Admin!'); await loadData();
+            toast.success('Welcome, Admin!');
+            // Full reload so layout re-reads localStorage and shows sidebar immediately
+            window.location.href = '/admin';
         } catch { toast.error('Invalid credentials'); }
         finally { setLoginLoading(false); }
     };

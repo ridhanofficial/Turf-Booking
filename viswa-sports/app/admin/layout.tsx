@@ -43,8 +43,8 @@ function AdminLayoutInner({ children }: { children: React.ReactNode }) {
     const handleLogout = () => {
         localStorage.removeItem('viswa_admin_token');
         localStorage.removeItem('viswa_token');
-        setIsLoggedIn(false);
-        router.push('/admin');
+        // Full reload so all components re-read localStorage and show login form
+        window.location.href = '/admin';
     };
 
     return (
