@@ -18,6 +18,7 @@ const SLOT_COLORS: Record<string, React.CSSProperties> = {
     held: { background: 'rgba(255,215,0,0.12)', border: '1px solid rgba(255,215,0,0.4)', color: '#FFD700', cursor: 'not-allowed' },
     held_by_me: { background: 'rgba(0,229,153,0.1)', border: '2px dashed rgba(0,229,153,0.45)', color: '#00e599', cursor: 'pointer' },
     booked: { background: 'rgba(255,68,68,0.12)', border: '1px solid rgba(255,68,68,0.4)', color: '#FF4444', cursor: 'not-allowed' },
+    blocked: { background: 'rgba(255,120,50,0.10)', border: '1px solid rgba(255,120,50,0.35)', color: '#FF7832', cursor: 'not-allowed' },
     disabled: { background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', color: '#4A5568', cursor: 'not-allowed' },
     selected: { background: 'rgba(0,229,153,0.18)', border: '2px solid #00e599', color: '#00e599', cursor: 'pointer' },
 };
@@ -629,6 +630,7 @@ export default function BookingPage() {
                                 { label: 'Selected', style: SLOT_COLORS.selected },
                                 { label: 'Held', style: SLOT_COLORS.held },
                                 { label: 'Booked', style: SLOT_COLORS.booked },
+                                { label: 'Blocked', style: SLOT_COLORS.blocked },
                             ].map(({ label, style }) => (
                                 <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 600, padding: '5px 12px', borderRadius: 8, ...style }}>
                                     <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'currentColor' }} />
