@@ -88,23 +88,31 @@ function SuccessContent() {
                     )}
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: '100%' }}>
-                        <Link href="/bookings" style={{
-                            background: '#00e599',
-                            color: '#0a0a0a', fontWeight: 800, padding: '14px 28px',
-                            borderRadius: 12, textDecoration: 'none', fontSize: 15,
-                            textAlign: 'center', display: 'block',
-                        }}>
+                        <button
+                            onClick={() => router.push('/bookings')}
+                            style={{
+                                background: '#00e599',
+                                color: '#0a0a0a', fontWeight: 800, padding: '14px 28px',
+                                borderRadius: 12, border: 'none', fontSize: 15,
+                                textAlign: 'center', display: 'block', width: '100%',
+                                cursor: 'pointer', fontFamily: 'Outfit, sans-serif',
+                            }}
+                        >
                             View My Bookings
-                        </Link>
-                        <Link href="/turfs" style={{
-                            background: 'rgba(255,255,255,0.06)',
-                            border: '1px solid rgba(255,255,255,0.1)',
-                            color: '#F0F4F8', fontWeight: 600, padding: '14px 28px',
-                            borderRadius: 12, textDecoration: 'none', fontSize: 15,
-                            textAlign: 'center', display: 'block',
-                        }}>
+                        </button>
+                        <button
+                            onClick={() => router.push('/turfs')}
+                            style={{
+                                background: 'rgba(255,255,255,0.06)',
+                                border: '1px solid rgba(255,255,255,0.1)',
+                                color: '#F0F4F8', fontWeight: 600, padding: '14px 28px',
+                                borderRadius: 12, fontSize: 15,
+                                textAlign: 'center', display: 'block', width: '100%',
+                                cursor: 'pointer', fontFamily: 'Inter, sans-serif',
+                            }}
+                        >
                             Book Another
-                        </Link>
+                        </button>
                     </div>
                 </div>
             </motion.div>
