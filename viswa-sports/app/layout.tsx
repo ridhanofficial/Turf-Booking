@@ -7,6 +7,9 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://viswasports.com"),
+  verification: {
+    google: "KqJjtk-Dscz7YvviGZxQD6R6lwORajTsPV9jMIJcO7g",
+  },
   title: {
     default: "Viswa Sports Arena — Book Cricket & Football Turf | Kinathukadavu",
     template: "%s | Viswa Sports Arena",
